@@ -9,6 +9,8 @@ public class Main {
         banco.getCliente("111A").ingresar(1000);
         banco.getCliente("111A").sacar(200);
         banco.traspasarDinero("111A", "222B", 300);
+        banco.traspasarDinero("111A", "222B", 0);
+
 
         banco.listarClientes();
         banco.getCliente("111A").ingresar(1000);
