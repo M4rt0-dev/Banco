@@ -20,6 +20,7 @@ public class Cliente implements Serializable {
     public boolean ingresar(double cantidad) {
         if (cantidad > 0) {
             saldo += cantidad;
+            System.out.println("Ingreso exitoso");
             return true;
         } else {
             System.out.println("La cantidad a ingresar no puede ser negativa");
@@ -30,7 +31,13 @@ public class Cliente implements Serializable {
     public boolean sacar(double cantidad) {
         if (cantidad > 0 && cantidad <= saldo) {
             saldo -= cantidad;
+            System.out.println("Retirada exitosa");
             return true;
+        } else if (cantidad < 0) {
+            System.out.println("La cantidad a retirar no puede ser negativa");
+            return false;
+        } else {
+            System.out.println("La cantidad a retirar no puede ser mayor al limite de la cuenta");
         }
         return false;
     }
