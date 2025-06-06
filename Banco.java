@@ -22,17 +22,22 @@ public class Banco {
                 }
             }
 
-        if (origen != null && destino != null) {
-            if (cantidad <= origen.saldo) {
-                origen.saldo -= cantidad;
-                destino.saldo += cantidad;
-                System.out.println("Traspaso exitoso");
-                return true;
+            if (origen != null && destino != null) {
+                if (cantidad <= origen.saldo) {
+                    origen.saldo -= cantidad;
+                    destino.saldo += cantidad;
+                    System.out.println("Traspaso exitoso");
+                    return true;
+                } else {
+                    System.out.println("Fondos insuficientes en la cuenta de origen");
+                }
             } else {
-                System.out.println("Fondos insuficientes en la cuenta de origen");
+                System.out.println("Uno o ambos clientes no encontrados");
             }
-        } else {
-            System.out.println("Uno o ambos clientes no encontrados");
+            return false;
+        } catch (Exception e) {
+            System.err.println("Error, se encontraron letras en la cantidad");
+            return false;
         }
         return false;
     }
