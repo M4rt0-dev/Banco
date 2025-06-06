@@ -10,17 +10,16 @@ public class Banco {
     }
 
     public boolean traspasarDinero(String dniOrigen, String dniDestino, double cantidad) {
-        try {
-            Cliente origen = null;
-            Cliente destino = null;
-            for (Cliente c : clientes) {
-                if (c.dni.equals(dniOrigen)) {
-                    origen = c;
-                }
-                if (c.dni.equals(dniDestino)) {
-                    destino = c;
-                }
+        Cliente origen = null;
+        Cliente destino = null;
+        for (Cliente c : clientes) {
+            if (c.dni.equals(dniOrigen)) {
+                origen = c;
             }
+            if (c.dni.equals(dniDestino)) {
+                destino = c;
+            }
+        }
 
         if (origen != null && destino != null) {
             if (cantidad <= origen.saldo) {
