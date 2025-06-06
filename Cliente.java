@@ -21,6 +21,8 @@ public class Cliente implements Serializable {
         if (cantidad > 0) {
             saldo += cantidad;
             return true;
+        } else {
+            System.out.println("La cantidad a ingresar no puede ser negativa");
         }
         return false;
     }
