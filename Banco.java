@@ -39,7 +39,6 @@ public class Banco {
             System.err.println("Error, se encontraron letras en la cantidad");
             return false;
         }
-        return false;
     }
 
     public Cliente getCliente(String dni) {
