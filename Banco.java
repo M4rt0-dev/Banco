@@ -22,13 +22,18 @@ public class Banco {
         }
 
         if (origen != null && destino != null) {
-            if (cantidad <= origen.saldo) {
-                origen.saldo -= cantidad;
-                destino.saldo += cantidad;
-                System.out.println("Traspaso exitoso");
-                return true;
+            if (cantidad < 0) {
+                System.err.println("El dinero a traspasar no puede ser negativo");
+                return false;
             } else {
-                System.out.println("Fondos insuficientes en la cuenta de origen");
+                if (cantidad <= origen.saldo) {
+                    origen.saldo -= cantidad;
+                    destino.saldo += cantidad;
+                    System.out.println("Traspaso exitoso");
+                    return true;
+                } else {
+                    System.out.println("Fondos insuficientes en la cuenta de origen");
+                }
             }
         } else {
             System.out.println("Uno o ambos clientes no encontrados");
