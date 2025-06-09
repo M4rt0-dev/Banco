@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Banco {
     private ArrayList<Cliente> clientes = new ArrayList<>();
 
-    public void agregarCliente(String nombre, String dni, String direccion, String numeroCuenta) {
-        Cliente cliente = new Cliente(nombre, dni, direccion, numeroCuenta);
+    public void agregarCliente(String nombre, String dni, String direccion, Cuenta cuenta) {
+        Cliente cliente = new Cliente(nombre, dni, direccion, cuenta);
         clientes.add(cliente);
         System.out.println("Cliente agregado con éxito");
     }
@@ -28,9 +28,9 @@ public class Banco {
                 System.out.println("El dinero a traspasar no puede ser negativo");
                 return false;
             } else {
-                if (cantidad <= origen.getSaldo()) {
-                    origen.sacarDinero(cantidad);
-                    destino.ingresarDinero(cantidad);
+                if (cantidad <= origen.getCuenta().getSaldo()) {
+                    origen.getCuenta().sacarDinero(cantidad);
+                    destino.getCuenta().ingresarDinero(cantidad);
                     System.out.println("Traspaso exitoso");
                     return true;
                 } else {

@@ -4,46 +4,14 @@ public class Cliente implements Serializable {
     private String nombre;
     private String dni;
     private String direccion;
-    private double saldo;
-    private String numeroCuenta;
+    private Cuenta cuenta;
 
-    public Cliente(String nombre, String dni, String direccion, String numeroCuenta) {
+    public Cliente(String nombre, String dni, String direccion, Cuenta cuenta) {
         this.nombre = nombre;
         this.dni = dni;
         this.direccion = direccion;
-        this.numeroCuenta = numeroCuenta;
-        this.saldo = 0;
+        this.cuenta = cuenta;
     }
-
-    public boolean ingresarDinero(double cantidad) {
-        if (cantidad > 0) {
-            saldo += cantidad;
-            System.out.println("Ingreso exitoso");
-            return true;
-        } else {
-            System.out.println("La cantidad a ingresarDinero no puede ser negativa");
-        }
-        return false;
-    }
-
-    public boolean sacarDinero(double cantidad) {
-        if (cantidad > 0 && cantidad <= saldo) {
-            saldo -= cantidad;
-            System.out.println("Retirada exitosa");
-            return true;
-        } else if (cantidad < 0) {
-            System.out.println("La cantidad a retirar no puede ser negativa");
-            return false;
-        } else {
-            System.out.println("La cantidad a retirar no puede ser mayor al limite de la cuenta");
-        }
-        return false;
-    }
-
-    public void consultarSaldo() {
-        System.out.println("Saldo actual: " + saldo);
-    }
-
 
     public void mostrarInformacionCliente() {
         System.out.println("Nombre: " + nombre);
@@ -63,12 +31,8 @@ public class Cliente implements Serializable {
         return direccion;
     }
 
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public String getNumeroCuenta() {
-        return numeroCuenta;
+    public Cuenta getCuenta() {
+        return cuenta;
     }
 
     public void setNombre(String nombre) {
@@ -82,12 +46,5 @@ public class Cliente implements Serializable {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
-    public void setNumeroCuenta(String numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
+    
 }
