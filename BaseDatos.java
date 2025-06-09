@@ -2,6 +2,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Mario Anguita Álvarez
+ * @version 1.1
+ * @see Cliente
+ */
+
 public class BaseDatos {
     private static final String ARCHIVO = "datos_bancarios.txt";
     private static final String RUTA = System.getProperty("user.dir");

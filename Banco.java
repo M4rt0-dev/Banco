@@ -1,14 +1,33 @@
 import java.util.ArrayList;
 
+/**
+ * @author Mario Anguita Álvarez
+ * @version 1.1
+ * @see Cliente
+ */
+
 public class Banco {
     private ArrayList<Cliente> clientes = new ArrayList<>();
 
+    /**
+     * Metodo para añadir un cliente al banco
+     * @since 1.0
+     * @param nombre (String): Nombre del Cliente
+     * @param dni (String): Dni del Cliente
+     * @param direccion (String): Dirección de residencia del cliente
+     * @param cuenta (Cuenta): Cuenta de banco perteneciente al cliente
+     */
     public void agregarCliente(String nombre, String dni, String direccion, Cuenta cuenta) {
         Cliente cliente = new Cliente(nombre, dni, direccion, cuenta);
         clientes.add(cliente);
         System.out.println("Cliente agregado con éxito");
     }
 
+    /**
+     * Metodo para comprobar la existencia del cliente
+     * @param dniOrigen (String): Dni del Cliente
+     * @return (Cliente): Devuelve el cliente si existe
+     */
     public Cliente comprobarCliente(String dniOrigen){
         Cliente origen = null;
         for (Cliente c : clientes) {
@@ -19,6 +38,13 @@ public class Banco {
         return origen;
     }
 
+    /**
+     * Metodo para traspasar dinero de una cuenta a otra
+     * @param dniOrigen (String): Dni del Cliente que envía el dinero
+     * @param dniDestino (String): Dni del Cliente que recibe el dinero
+     * @param cantidad (double): Cantidad a traspasar
+     * @return (Boolean): Estado de la transacción: True si se ha realizado correctamente, False si no se ha realizado correctamente
+     */
     public boolean traspasarDinero(String dniOrigen, String dniDestino, double cantidad) {
         Cliente origen = comprobarCliente(dniOrigen);
         Cliente destino = comprobarCliente(dniDestino);
@@ -43,6 +69,11 @@ public class Banco {
         return false;
     }
 
+    /**
+     * Metodo para saber qué cliente se quiere usar
+     * @param dni (String)
+     * @return Se devuelve el cliente si existe
+     */
     public Cliente getCliente(String dni) {
         for (Cliente c : clientes) {
             if (c.getDni().equals(dni)) {

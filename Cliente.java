@@ -1,5 +1,11 @@
 import java.io.Serializable;
 
+/**
+ * @author Mario Anguita Álvarez
+ * @version 1.1
+ * @see Cliente
+ */
+
 public class Cliente implements Serializable {
     private String nombre;
     private String dni;
@@ -46,5 +52,5 @@ public class Cliente implements Serializable {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
+
 }
