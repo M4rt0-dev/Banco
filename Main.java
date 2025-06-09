@@ -8,14 +8,14 @@ public class Main {
         banco.agregarCliente("Ron", "222C", "Calle C", "CUENTA3");
         banco.agregarCliente("Ren", "222D", "Calle D", "CUENTA4");
 
-        banco.getCliente("111A").ingresar(1000);
-        banco.getCliente("111A").sacar(200);
+        banco.getCliente("111A").ingresarDinero(1000);
+        banco.getCliente("111A").sacarDinero(200);
         banco.traspasarDinero("111A", "222B", 300);
         banco.traspasarDinero("111A", "222B", -45);
 
 
         banco.listarClientes();
-        banco.getCliente("111A").ingresar(1000);
+        banco.getCliente("111A").ingresarDinero(1000);
 
     }
 }

@@ -29,14 +29,8 @@ public class Banco {
                 return false;
             } else {
                 if (cantidad <= origen.getSaldo()) {
-                    double saldo1;
-                    saldo1 = origen.getSaldo();
-                    saldo1 -= cantidad;
-                    origen.setSaldo(saldo1);
-                    double saldo2;
-                    saldo2 = destino.getSaldo();
-                    saldo2 += cantidad;
-                    destino.setSaldo(saldo2);
+                    origen.sacarDinero(cantidad);
+                    destino.ingresarDinero(cantidad);
                     System.out.println("Traspaso exitoso");
                     return true;
                 } else {
@@ -60,7 +54,7 @@ public class Banco {
 
     public void listarClientes() {
         for (Cliente c : clientes) {
-            c.mostrarInformacion();
+            c.mostrarInformacionCliente();
         }
     }
 }

@@ -15,18 +15,18 @@ public class Cliente implements Serializable {
         this.saldo = 0;
     }
 
-    public boolean ingresar(double cantidad) {
+    public boolean ingresarDinero(double cantidad) {
         if (cantidad > 0) {
             saldo += cantidad;
             System.out.println("Ingreso exitoso");
             return true;
         } else {
-            System.out.println("La cantidad a ingresar no puede ser negativa");
+            System.out.println("La cantidad a ingresarDinero no puede ser negativa");
         }
         return false;
     }
 
-    public boolean sacar(double cantidad) {
+    public boolean sacarDinero(double cantidad) {
         if (cantidad > 0 && cantidad <= saldo) {
             saldo -= cantidad;
             System.out.println("Retirada exitosa");
@@ -45,7 +45,7 @@ public class Cliente implements Serializable {
     }
 
 
-    public void mostrarInformacion() {
+    public void mostrarInformacionCliente() {
         System.out.println("Nombre: " + nombre);
         System.out.println("DNI: " + dni);
         System.out.println("Dirección: " + direccion);
