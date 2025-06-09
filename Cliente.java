@@ -1,11 +1,11 @@
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
-    public String nombre;
-    public String dni;
-    public String direccion;
-    public double saldo;
-    public String numeroCuenta;
+    private String nombre;
+    private String dni;
+    private String direccion;
+    private double saldo;
+    private String numeroCuenta;
 
     public Cliente(String nombre, String dni, String direccion, String numeroCuenta) {
         this.nombre = nombre;
@@ -14,8 +14,6 @@ public class Cliente implements Serializable {
         this.numeroCuenta = numeroCuenta;
         this.saldo = 0;
     }
-
-
 
     public boolean ingresar(double cantidad) {
         if (cantidad > 0) {
@@ -51,5 +49,45 @@ public class Cliente implements Serializable {
         System.out.println("Nombre: " + nombre);
         System.out.println("DNI: " + dni);
         System.out.println("Dirección: " + direccion);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
     }
 }

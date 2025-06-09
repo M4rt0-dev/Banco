@@ -5,6 +5,8 @@ public class Main {
 
         banco.agregarCliente("Alice", "111A", "Calle A", "CUENTA1");
         banco.agregarCliente("Bob", "222B", "Calle B", "CUENTA2");
+        banco.agregarCliente("Ron", "222C", "Calle C", "CUENTA3");
+        banco.agregarCliente("Ren", "222D", "Calle D", "CUENTA4");
 
         banco.getCliente("111A").ingresar(1000);
         banco.getCliente("111A").sacar(200);

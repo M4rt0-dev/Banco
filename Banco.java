@@ -9,26 +9,34 @@ public class Banco {
         System.out.println("Cliente agregado con éxito");
     }
 
-    public boolean traspasarDinero(String dniOrigen, String dniDestino, double cantidad) {
+    public Cliente comprobarCliente(String dniOrigen){
         Cliente origen = null;
-        Cliente destino = null;
         for (Cliente c : clientes) {
-            if (c.dni.equals(dniOrigen)) {
+            if (c.getDni().equals(dniOrigen)) {
                 origen = c;
             }
-            if (c.dni.equals(dniDestino)) {
-                destino = c;
-            }
         }
+        return origen;
+    }
+
+    public boolean traspasarDinero(String dniOrigen, String dniDestino, double cantidad) {
+        Cliente origen = comprobarCliente(dniOrigen);
+        Cliente destino = comprobarCliente(dniDestino);
 
         if (origen != null && destino != null) {
             if (cantidad < 0) {
-                System.err.println("El dinero a traspasar no puede ser negativo");
+                System.out.println("El dinero a traspasar no puede ser negativo");
                 return false;
             } else {
-                if (cantidad <= origen.saldo) {
-                    origen.saldo -= cantidad;
-                    destino.saldo += cantidad;
+                if (cantidad <= origen.getSaldo()) {
+                    double saldo1;
+                    saldo1 = origen.getSaldo();
+                    saldo1 -= cantidad;
+                    origen.setSaldo(saldo1);
+                    double saldo2;
+                    saldo2 = destino.getSaldo();
+                    saldo2 += cantidad;
+                    destino.setSaldo(saldo2);
                     System.out.println("Traspaso exitoso");
                     return true;
                 } else {
@@ -43,7 +51,7 @@ public class Banco {
 
     public Cliente getCliente(String dni) {
         for (Cliente c : clientes) {
-            if (c.dni.equals(dni)) {
+            if (c.getDni().equals(dni)) {
                 return c;
             }
         }
