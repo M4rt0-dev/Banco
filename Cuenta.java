@@ -2,7 +2,6 @@
 /**
  * @author Mario Anguita Álvarez
  * @version 1.1
- * @see Cliente
  */
 
 public class Cuenta {

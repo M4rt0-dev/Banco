@@ -5,7 +5,6 @@ import java.util.List;
 /**
  * @author Mario Anguita Álvarez
  * @version 1.1
- * @see Cliente
  */
 
 public class BaseDatos {
@@ -15,6 +14,10 @@ public class BaseDatos {
     private static final String FOLDER = "resources";
     private static final String RUTA_FINAL = RUTA + SEPARATOR + FOLDER + SEPARATOR + ARCHIVO;
 
+    /**
+     * Metodo para guardar los clientes en un archivo para la base de datos
+     * @param lista (ArrayList) lista de datos que se guarda
+     */
     public void guardar(ArrayList<Cliente> lista) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(RUTA_FINAL))) {
             oos.writeObject(lista);
@@ -25,6 +28,10 @@ public class BaseDatos {
         }
     }
 
+    /**
+     * Metodo para cargar el archivo de la base de datos previamente guardado
+     * @return devuelve el archivo de clientes si existe, si no existe o no ha sido creado todavía devuelve null
+     */
     public ArrayList<Cliente> cargarTodos() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(RUTA_FINAL)))){
             return (ArrayList<Cliente>) ois.readObject();

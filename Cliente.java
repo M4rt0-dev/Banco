@@ -3,7 +3,7 @@ import java.io.Serializable;
 /**
  * @author Mario Anguita Álvarez
  * @version 1.1
- * @see Cliente
+ * @see Cuenta
  */
 
 public class Cliente implements Serializable {

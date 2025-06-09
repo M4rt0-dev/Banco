@@ -83,6 +83,9 @@ public class Banco {
         return null;
     }
 
+    /**
+     * Metodo para mostrar por pantalla una lista de los clientes del banco
+     */
     public void listarClientes() {
         for (Cliente c : clientes) {
             c.mostrarInformacionCliente();
