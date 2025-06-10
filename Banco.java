@@ -41,7 +41,7 @@ public class Banco {
     }
 
     /**
-     * Metodo para traspasar dinero de una cuenta a otra
+     * Metodo para traspasar dinero entre cuentas
      * @since 1.0
      * @param dniOrigen (String): Dni del Cliente que envía el dinero
      * @param dniDestino (String): Dni del Cliente que recibe el dinero
