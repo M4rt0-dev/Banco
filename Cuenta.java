@@ -43,10 +43,6 @@ public class Cuenta {
         System.out.println("Saldo actual: " + saldo);
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     public void setNumeroCuenta(String numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
     }
