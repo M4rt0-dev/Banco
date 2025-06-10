@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Esta clase contiene las funcionalidades para interactuar con el archivo de la base de datos
  * @author Mario Anguita Álvarez
  * @version 1.1
  */
@@ -16,6 +17,7 @@ public class BaseDatos {
 
     /**
      * Metodo para guardar los clientes en un archivo para la base de datos
+     * @since 1.0
      * @param lista (ArrayList) lista de datos que se guarda
      */
     public void guardar(ArrayList<Cliente> lista) {
@@ -30,6 +32,7 @@ public class BaseDatos {
 
     /**
      * Metodo para cargar el archivo de la base de datos previamente guardado
+     * @since 1.0
      * @return devuelve el archivo de clientes si existe, si no existe o no ha sido creado todavía devuelve null
      */
     public ArrayList<Cliente> cargarTodos() {
