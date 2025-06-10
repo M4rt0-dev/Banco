@@ -25,6 +25,7 @@ public class Banco {
 
     /**
      * Metodo para comprobar la existencia del cliente
+     * @since 1.0
      * @param dniOrigen (String): Dni del Cliente
      * @return (Cliente): Devuelve el cliente si existe
      */
@@ -40,6 +41,7 @@ public class Banco {
 
     /**
      * Metodo para traspasar dinero de una cuenta a otra
+     * @since 1.0
      * @param dniOrigen (String): Dni del Cliente que envía el dinero
      * @param dniDestino (String): Dni del Cliente que recibe el dinero
      * @param cantidad (double): Cantidad a traspasar
@@ -71,6 +73,7 @@ public class Banco {
 
     /**
      * Metodo para saber qué cliente se quiere usar
+     * @since 1.0
      * @param dni (String)
      * @return Se devuelve el cliente si existe
      */
